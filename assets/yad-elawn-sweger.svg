@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="top" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2f9e5a"/>
+      <stop offset="100%" stop-color="#24884b"/>
+    </linearGradient>
+    <style>
+      .title{font:700 44px Arial, sans-serif; fill:#fff}
+      .h1{font:700 34px Arial, sans-serif; fill:#222}
+      .h2{font:700 26px Arial, sans-serif; fill:#333}
+      .txt{font:400 20px Arial, sans-serif; fill:#666}
+      .mono{font:700 22px Arial, sans-serif; fill:#fff; letter-spacing:1px}
+      .small{font:400 18px Arial, sans-serif; fill:#666}
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="#f5f7f8"/>
+  <rect width="1600" height="130" fill="url(#top)"/>
+  <text x="42" y="74" class="title">Yad ElAwn API</text>
+  <rect x="1280" y="28" rx="18" ry="18" width="260" height="62" fill="#ffffff" stroke="#d9dee3" stroke-width="2"/>
+  <text x="1310" y="67" class="small">Bearer token</text>
+
+  <g>
+    <rect x="40" y="170" width="1520" height="140" rx="22" fill="#fff" stroke="#e4e7eb"/>
+    <rect x="70" y="205" width="100" height="60" rx="14" fill="#4caf50"/>
+    <text x="94" y="243" class="mono">GET</text>
+    <text x="210" y="230" class="h1">/api/Charities</text>
+    <text x="210" y="276" class="txt">List charities and open donation requests</text>
+    <rect x="1220" y="205" width="290" height="62" rx="16" fill="#f7fafb" stroke="#d8dde1"/>
+    <text x="1246" y="244" class="small">Try it out   Execute</text>
+  </g>
+
+  <g>
+    <rect x="40" y="340" width="1520" height="140" rx="22" fill="#fff" stroke="#e4e7eb"/>
+    <rect x="70" y="375" width="100" height="60" rx="14" fill="#2196f3"/>
+    <text x="89" y="413" class="mono">POST</text>
+    <text x="210" y="400" class="h1">/api/Auth/Login</text>
+    <text x="210" y="446" class="txt">Login user and receive JWT</text>
+    <rect x="1220" y="375" width="290" height="62" rx="16" fill="#f7fafb" stroke="#d8dde1"/>
+    <text x="1246" y="414" class="small">Try it out   Execute</text>
+  </g>
+
+  <g>
+    <rect x="40" y="510" width="1520" height="140" rx="22" fill="#fff" stroke="#e4e7eb"/>
+    <rect x="70" y="545" width="100" height="60" rx="14" fill="#ff9800"/>
+    <text x="79" y="583" class="mono">PATCH</text>
+    <text x="210" y="570" class="h1">/api/Requests/{id}/approve</text>
+    <text x="210" y="616" class="txt">Approve beneficiary requests and update status</text>
+    <rect x="1220" y="545" width="290" height="62" rx="16" fill="#f7fafb" stroke="#d8dde1"/>
+    <text x="1246" y="584" class="small">Try it out   Execute</text>
+  </g>
+
+  <g>
+    <rect x="40" y="680" width="1520" height="280" rx="20" fill="#fafafa" stroke="#e4e7eb"/>
+    <text x="70" y="732" class="h2">Swagger Highlights</text>
+    <circle cx="80" cy="780" r="6" fill="#2f9e5a"/>
+    <text x="100" y="787" class="small">JWT authentication for secure endpoints</text>
+    <circle cx="80" cy="822" r="6" fill="#2f9e5a"/>
+    <text x="100" y="829" class="small">Role-based access for charities, donors, and beneficiaries</text>
+    <circle cx="80" cy="864" r="6" fill="#2f9e5a"/>
+    <text x="100" y="871" class="small">REST API for donation requests and approvals</text>
+    <circle cx="80" cy="906" r="6" fill="#2f9e5a"/>
+    <text x="100" y="913" class="small">Seeded SQL Server data with example workflows</text>
+  </g>
+</svg>
