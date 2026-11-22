@@ -2966,7 +2966,8 @@
     // ══ CONTACT FORM ══
     function handleForm(e){e.preventDefault();let f=e.target.querySelectorAll('.cf-input');let a=document.querySelector('a[href^="mailto:"]').getAttribute('href').split('#')[0];location.href=a+'?subject='+encodeURIComponent('Portfolio enquiry: '+f[0].value.trim())+'&body='+encodeURIComponent('Name: '+f[0].value.trim()+'\nReply email: '+f[1].value.trim()+'\n\n'+f[2].value.trim());}    const cf=document.getElementById('cf-btn');cf.dataset.en='Open Email App →';cf.dataset.ar='فتح تطبيق البريد ←';cf.textContent=cf.dataset.en;
         cf.insertAdjacentHTML('afterend','<p data-en="Review and send in your email app. If it does not open, use the email or WhatsApp links." data-ar="راجعي الرسالة وابعتيها من تطبيق البريد. لو مافتحش، استخدمي رابط الإيميل أو واتساب.">Review and send in your email app. If it does not open, use the email or WhatsApp links.</p>');
-
+    document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{a.href=a.href.split('#')[0];a.querySelectorAll('.__cf_email__').forEach(e=>e.textContent=a.href.slice(7));});
+        const oldToggle=toggleLang;toggleLang=function(){oldToggle();cf.textContent=cf.dataset[document.documentElement.lang==='ar'?'ar':'en'];};
     // ══ LANGUAGE TOGGLE ══
     let isAr = false;
     function toggleLang() {
