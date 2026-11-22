@@ -2964,32 +2964,8 @@
     orderStaticProjects();
 
     // ══ CONTACT FORM ══
-    function handleForm(e) {
-      e.preventDefault();
-      var btn = document.getElementById('cf-btn');
-      var isAr = document.documentElement.lang === 'ar';
-      var inp = e.target.querySelectorAll('.cf-input');
-      var name = inp[0].value.trim();
-      var emailVal = inp[1].value.trim();
-      var msg = inp[2].value.trim();
-      var token = '8262710552:AAH69X7swcGfORPwmGoy9fT_z5w13Ny_2EU';
-      var chatId = '5675048605';
-      var txt = '📩 رسالة جديدة\n\n👤 الاسم: ' + name + '\n📧 الإيميل: ' + emailVal + '\n\n💬 الرسالة:\n' + msg;
-      btn.textContent = 'جارٍ الإرسال...';
-      btn.disabled = true;
-      var s = document.createElement('script');
-      s.src = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatId + '&text=' + encodeURIComponent(txt) + '&callback=tgDone';
-      function done() {
-        try { document.body.removeChild(s); } catch (x) { }
-        btn.textContent = '✓ تم الإرسال بنجاح!';
-        btn.style.background = '#28c840';
-        e.target.reset();
-        setTimeout(function () { btn.textContent = isAr ? 'إرسال الرسالة ←' : 'Send Message →'; btn.disabled = false; btn.style.background = ''; }, 3000);
-      }
-      window.tgDone = done;
-      s.onload = done; s.onerror = done;
-      document.body.appendChild(s);
-    }
+    function handleForm(e){e.preventDefault();let f=e.target.querySelectorAll('.cf-input');let a=document.querySelector('a[href^="mailto:"]').getAttribute('href').split('#')[0];location.href=a+'?subject='+encodeURIComponent('Portfolio enquiry: '+f[0].value.trim())+'&body='+encodeURIComponent('Name: '+f[0].value.trim()+'\nReply email: '+f[1].value.trim()+'\n\n'+f[2].value.trim());}    const cf=document.getElementById('cf-btn');cf.dataset.en='Open Email App →';cf.dataset.ar='فتح تطبيق البريد ←';cf.textContent=cf.dataset.en;
+        cf.insertAdjacentHTML('afterend','<p data-en="Review and send in your email app. If it does not open, use the email or WhatsApp links." data-ar="راجعي الرسالة وابعتيها من تطبيق البريد. لو مافتحش، استخدمي رابط الإيميل أو واتساب.">Review and send in your email app. If it does not open, use the email or WhatsApp links.</p>');
 
     // ══ LANGUAGE TOGGLE ══
     let isAr = false;
