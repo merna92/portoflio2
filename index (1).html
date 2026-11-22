@@ -2968,7 +2968,9 @@
         cf.insertAdjacentHTML('afterend','<p data-en="Review and send in your email app. If it does not open, use the email or WhatsApp links." data-ar="راجعي الرسالة وابعتيها من تطبيق البريد. لو مافتحش، استخدمي رابط الإيميل أو واتساب.">Review and send in your email app. If it does not open, use the email or WhatsApp links.</p>');
     document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{a.href=a.href.split('#')[0];a.querySelectorAll('.__cf_email__').forEach(e=>e.textContent=a.href.slice(7));});
         const oldToggle=toggleLang;toggleLang=function(){oldToggle();cf.textContent=cf.dataset[document.documentElement.lang==='ar'?'ar':'en'];};
-    // ══ LANGUAGE TOGGLE ══
+    const zoneCard=[...document.querySelectorAll('.proj-name')].find(e=>e.textContent.trim()==='ZoneSync')?.parentElement;
+        if(zoneCard){const d=zoneCard.querySelector('.proj-desc span');d.dataset.en='Team smart-agriculture project for farms, zones, sensor readings, alerts and assigned tasks. Repository: ASP.NET Core MVC, Identity, EF Core, SQL Server and an HTML/CSS/JavaScript prototype.';d.dataset.ar='مشروع جماعي لإدارة المزارع والمناطق وقراءات الحساسات والتنبيهات والمهام. المستودع: ASP.NET Core MVC وIdentity وEF Core وSQL Server ونموذج واجهة HTML/CSS/JavaScript.';d.textContent=d.dataset.en;zoneCard.querySelectorAll('.ptag').forEach((t,i)=>t.textContent=['ASP.NET Core MVC','HTML/CSS/JS','SQL Server','Identity'][i]);zoneCard.querySelectorAll('.proj-badge')[1].textContent='Team Project';}
+        // Language controls
     let isAr = false;
     function toggleLang() {
       isAr = !isAr;
